@@ -16,5 +16,5 @@ How to convert the static web page to a dynamic project.
 
 ## View Project
 
-- Open browser and open
+- Open browser 
 - Click and open the index.html file.
