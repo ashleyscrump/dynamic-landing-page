@@ -58,6 +58,7 @@ function navCreate() {
 //call function here
 navCreate();
 
+
 // Add class 'active' to section when near top of viewport
 //function gets position and size of the element relative to the viewport using .getboundingclientrect() and returns the largest value thats < or equal to the number
 const offset = (sections) => {
@@ -78,6 +79,7 @@ const addActive = (conditional, sections) => {
     sections.style.cssText = "background-color: #cc1;";
   }
 };
+
 
 //creates the active  function and loops through each section with forEach loop
 const sectionActive = () => {
@@ -111,6 +113,7 @@ const scrolling = () => {
 
 //calls function
 scrolling();
+
 
 /*
  * scroll to top button
