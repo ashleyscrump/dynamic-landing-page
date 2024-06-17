@@ -120,35 +120,22 @@ scrolling();
 let button = document.getElementById("scrollToTop");
 
 // the user scrolls down from the top of the document, show the button
-window.onscroll = function() {scrollFunction()};
+window.onscroll = function () {
+  scrollFunction();
+};
 //create scroll function
 function scrollFunction() {
-    if (document.body.scrollTop > window.innerHeight || document.documentElement.scrollTop > window.innerHeight) {
-        button.style.display = "block";
-    } else {
-        button.style.display = "none";
-    }
+  if (
+    document.body.scrollTop > window.innerHeight ||
+    document.documentElement.scrollTop > window.innerHeight
+  ) {
+    button.style.display = "block";
+  } else {
+    button.style.display = "none";
+  }
 }
 
 // the user clicks on the button, scroll to the top of the document
-button.onclick = function() {
-    window.scrollTo({top: 0, behavior: 'smooth'});
-}
-
-
-document.addEventListener("DOMContentLoaded", function() {
-  var coll = document.getElementsByClassName("collapsible");
-  var i;
-
-  for (i = 0; i < coll.length; i++) {
-      coll[i].addEventListener("click", function() {
-          this.classList.toggle("active");
-          var content = this.nextElementSibling;
-          if (content.style.display === "block") {
-              content.style.display = "none";
-          } else {
-              content.style.display = "block";
-          }
-      });
-  }
-});
+button.onclick = function () {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+};
