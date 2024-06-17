@@ -75,7 +75,7 @@ const removeActive = (sections) => {
 const addActive = (conditional, sections) => {
   if (conditional) {
     sections.classList.add("your-active-class");
-    sections.style.cssText = "background-color: grey;";
+    sections.style.cssText = "background-color: #cc1;";
   }
 };
 
@@ -83,9 +83,9 @@ const addActive = (conditional, sections) => {
 const sectionActive = () => {
   sections.forEach((section) => {
     //stores value from offset function and creates new variable and gives section working on
-    const sectionOffset = offset(section);
+    const sectionOff = offset(section);
     //test section's offset is in reference to number
-    inviewport = () => sectionOffset < 160 && sectionOffset >= -160;
+    inviewport = () => sectionOff < 160 && sectionOff >= -160;
     //call function and section working on
     removeActive(section);
     addActive(inviewport(), section);
@@ -97,25 +97,58 @@ window.addEventListener("scroll", sectionActive);
 // Scroll to anchor ID using scrollTO event
 
 const scrolling = () => {
+  //selects all anchors
   const links = document.querySelectorAll(".navbar__menu a");
   links.forEach((link) => {
     link.addEventListener("clickevent", () => {
+      //loops through each section and adds click event and scroll
       for (i = 0; i < sections; i++) {
         sections[i].addEventListener("clickevent", sectionsScroll(link));
       }
     });
   });
 };
+
+//calls function
 scrolling();
 
-/**
- * End Main Functions
- * Begin Events
- *
+/*
+ * scroll to top button
  */
 
-// Build menu
+// create variable call button and grab button ID
+let button = document.getElementById("scrollToTop");
 
-// Scroll to section on link click
+// the user scrolls down from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+//create scroll function
+function scrollFunction() {
+    if (document.body.scrollTop > window.innerHeight || document.documentElement.scrollTop > window.innerHeight) {
+        button.style.display = "block";
+    } else {
+        button.style.display = "none";
+    }
+}
 
-// Set sections as active
+// the user clicks on the button, scroll to the top of the document
+button.onclick = function() {
+    window.scrollTo({top: 0, behavior: 'smooth'});
+}
+
+
+document.addEventListener("DOMContentLoaded", function() {
+  var coll = document.getElementsByClassName("collapsible");
+  var i;
+
+  for (i = 0; i < coll.length; i++) {
+      coll[i].addEventListener("click", function() {
+          this.classList.toggle("active");
+          var content = this.nextElementSibling;
+          if (content.style.display === "block") {
+              content.style.display = "none";
+          } else {
+              content.style.display = "block";
+          }
+      });
+  }
+});
