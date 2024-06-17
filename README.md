@@ -3,16 +3,16 @@
 ## Languages Used:
 - HTML
 - CSS
--JAVASCRIPT
+- JAVASCRIPT
 
 ## Functionality
 
--the Navigation
+- The Navigation
 - The Dynamic Active
 - The Scrolling Effect
 
 ## Learned
-Coverted the static web page to a dynamic project
+How to convert the static web page to a dynamic project.
 
 ## View Project
 
